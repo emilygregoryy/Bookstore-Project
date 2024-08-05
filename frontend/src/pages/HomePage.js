@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import BookList from '../components/BooksList';
 import BookSearch from '../components/BookSearch'; 
-import './HomePage.css';
+import '../Styles/HomePage.css';
 
 const HomePage = () => {
   const [books, setBooks] = useState([]);

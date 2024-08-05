@@ -1,7 +1,7 @@
 // src/pages/LoginPage.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import './LoginPage.css'; // Import the CSS file
+import '../Styles/LoginPage.css';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -12,7 +12,6 @@ const LoginPage = () => {
     try {
       const response = await axios.post('http://localhost:5000/api/auth/login', { username, password });
       console.log(response.data);
-      // Handle successful login (e.g., store user data, redirect to home page)
     } catch (error) {
       console.error('Error logging in:', error);
     }

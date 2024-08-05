@@ -1,7 +1,7 @@
 // src/pages/RegisterPage.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import './RegisterPage.css'; // Import the CSS file
+import '../Styles/HomePage.css';
 
 const RegisterPage = () => {
   const [username, setUsername] = useState('');
