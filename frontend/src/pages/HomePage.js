@@ -27,7 +27,6 @@ const HomePage = () => {
 
   const addToCart = (id) => {
     console.log(`Book with ID ${id} added to cart`);
-    // Implement the logic to add the book to the cart
   };
 
   const filteredBooks = books.filter(book =>

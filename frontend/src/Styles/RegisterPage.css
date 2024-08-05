@@ -1,55 +1,59 @@
-/* src/pages/RegisterPage.css */
 .register-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .register-page h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .register-page form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    max-width: 400px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .register-page label {
-    display: flex;
-    flex-direction: column;
-    font-size: 1rem;
-    color: #666;
-  }
-  
-  .register-page input {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .register-page button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .register-page button:hover {
-    background-color: #0056b3;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #0f0721;
+  color: #ffd700;
+}
+
+.register-page h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffd700;
+}
+
+.register-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(255, 0, 0, 0.3);
+}
+
+.register-page label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: #ffd700;
+}
+
+.register-page input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ffd700;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+  color: #ffd700;
+}
+
+.register-page button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #b22222; 
+  color: #ffd700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-page button:hover {
+  background-color: #800000;
+}

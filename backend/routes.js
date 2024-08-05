@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const db = require('./db');
 
-// Get all books
 router.get('/books', (req, res) => {
   db.query('SELECT * FROM books', [], (err, results) => {
     if (err) {
@@ -13,7 +12,6 @@ router.get('/books', (req, res) => {
   });
 });
 
-// Search books by title or author
 router.get('/books/search', (req, res) => {
   const searchTerm = req.query.q;
   if (!searchTerm) {
@@ -31,7 +29,7 @@ router.get('/books/search', (req, res) => {
   });
 });
 
-// Add a new book
+
 router.post('/books', (req, res) => {
   const { title, author, price } = req.body;
   db.query('INSERT INTO books (title, author, price) VALUES (?, ?, ?)', [title, author, price], (err, result) => {
@@ -43,7 +41,7 @@ router.post('/books', (req, res) => {
   });
 });
 
-// Update a book
+
 router.put('/books/:id', (req, res) => {
   const { title, author, price } = req.body;
   const bookId = req.params.id;
@@ -56,7 +54,7 @@ router.put('/books/:id', (req, res) => {
   });
 });
 
-// Delete a book
+
 router.delete('/books/:id', (req, res) => {
   const bookId = req.params.id;
   db.query('DELETE FROM books WHERE id = ?', [bookId], (err, result) => {
