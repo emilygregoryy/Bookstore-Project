@@ -1,11 +1,12 @@
-// src/pages/HomePage.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import BookList from '../components/BookList';
-import './HomePage.css'; // Import the CSS file
+import BookList from '../components/BooksList';
+import BookSearch from '../components/BookSearch'; 
+import './HomePage.css';
 
 const HomePage = () => {
   const [books, setBooks] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -20,10 +21,26 @@ const HomePage = () => {
     fetchBooks();
   }, []);
 
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
+
+  const addToCart = (id) => {
+    console.log(`Book with ID ${id} added to cart`);
+    // Implement the logic to add the book to the cart
+  };
+
+  const filteredBooks = books.filter(book =>
+    book.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="homepage">
       <h1>Welcome to the Bookstore</h1>
-      <BookList books={books} />
+      <div className="search-container">
+        <BookSearch onSearch={handleSearch} />
+      </div>
+      <BookList books={filteredBooks} addToCart={addToCart} />
     </div>
   );
 };

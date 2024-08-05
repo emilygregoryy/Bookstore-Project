@@ -5,7 +5,6 @@ const db = require('../config/db');
 
 router.post('/place', (req, res) => {
   const { userId, books } = req.body;
-  // Assuming you have a table 'orders' and 'order_items'
   const query = 'INSERT INTO orders (user_id) VALUES (?)';
   db.query(query, [userId], (err, result) => {
     if (err) return res.status(500).send('Error placing order');

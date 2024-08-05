@@ -20,7 +20,7 @@ const LoginPage = () => {
 
   return (
     <div className="login-page">
-      <h1>Login</h1>
+      <h1>Bookstore Admin: Login Here to Access Inventory</h1>
       <form onSubmit={handleLogin}>
         <label>
           Username:

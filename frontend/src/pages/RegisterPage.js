@@ -13,7 +13,6 @@ const RegisterPage = () => {
     try {
       const response = await axios.post('http://localhost:5000/api/auth/register', { username, password, email });
       console.log(response.data);
-      // Handle successful registration (e.g., store user data, redirect to login page)
     } catch (error) {
       console.error('Error registering:', error);
     }
@@ -21,7 +20,7 @@ const RegisterPage = () => {
 
   return (
     <div className="register-page">
-      <h1>Register</h1>
+      <h1>Bookstore Staff: Register Here to Sign In</h1>
       <form onSubmit={handleRegister}>
         <label>
           Username:

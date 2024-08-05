@@ -1,8 +1,9 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -10,20 +11,14 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-<<<<<<< HEAD
-    "bcrypt": "^5.1.1",
+    "backend": "file:",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
     "mysql": "^2.18.1",
     "passport": "^0.7.0",
-    "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0"
-=======
-    "express": "^4.19.2",
-    "mysql": "^2.18.1",
-    "passport": "^0.7.0",
-    "passport-jwt": "^4.0.1"
->>>>>>> d348fda139f9c6d346a26ac5b9d51da9dcbe335a
   }
 }

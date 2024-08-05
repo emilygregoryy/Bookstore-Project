@@ -1,6 +1,6 @@
+// db.js
 const mysql = require('mysql');
 
-// Create a MySQL connection pool
 const pool = mysql.createPool({
   connectionLimit: 10,
   host: 'localhost',
@@ -9,7 +9,6 @@ const pool = mysql.createPool({
   database: 'bookstore'
 });
 
-// Execute a query
 function query(sql, params, callback) {
   pool.getConnection((err, connection) => {
     if (err) {

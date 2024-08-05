@@ -4,11 +4,29 @@ const db = require('./db');
 
 // Get all books
 router.get('/books', (req, res) => {
-  db.query('SELECT * FROM books', [], (err, result) => {
+  db.query('SELECT * FROM books', [], (err, results) => {
     if (err) {
       res.status(500).send('Error fetching books');
     } else {
-      res.json(result);
+      res.json(results);
+    }
+  });
+});
+
+// Search books by title or author
+router.get('/books/search', (req, res) => {
+  const searchTerm = req.query.q;
+  if (!searchTerm) {
+    res.json([]);
+    return;
+  }
+  const query = 'SELECT * FROM books WHERE title LIKE ? OR author LIKE ?';
+  const likeTerm = `%${searchTerm}%`;
+  db.query(query, [likeTerm, likeTerm], (err, results) => {
+    if (err) {
+      res.status(500).send('Error searching for books');
+    } else {
+      res.json(results);
     }
   });
 });
