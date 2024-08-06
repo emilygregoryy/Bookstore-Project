@@ -1,7 +1,7 @@
 // routes/orderRoutes.js
 const express = require('express');
 const router = express.Router();
-const db = require('../config/db');
+const db = require('../db');
 
 router.post('/place', (req, res) => {
   const { userId, books } = req.body;
