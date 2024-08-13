@@ -5,8 +5,8 @@ import '../Styles/AdminPage.css';
 
 const AdminPage = () => {
   const [books, setBooks] = useState([]);
-  const [newBook, setNewBook] = useState({ title: '', author: '', price: '', description: '' });
-  const [sortCriteria, setSortCriteria] = useState('title'); 
+  const [newBook, setNewBook] = useState({ id: null, title: '', author: '', price: '', description: '' });
+  const [sortCriteria, setSortCriteria] = useState('title');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,14 +30,20 @@ const AdminPage = () => {
     }
   };
 
-  const handleAddBook = async (e) => {
+  const handleAddOrUpdateBook = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/books', newBook);
+      if (newBook.id) {
+        // Update existing book
+        await axios.put(`http://localhost:5000/api/books/${newBook.id}`, newBook);
+      } else {
+        // Add new book
+        await axios.post('http://localhost:5000/api/books', newBook);
+      }
       fetchBooks(); // Refresh the list of books
-      setNewBook({ title: '', author: '', price: '', description: '' });
+      setNewBook({ id: null, title: '', author: '', price: '', description: '' });
     } catch (error) {
-      console.error('Error adding book:', error);
+      console.error('Error adding or updating book:', error);
     }
   };
 
@@ -50,19 +56,14 @@ const AdminPage = () => {
     }
   };
 
-  const handleUpdateBook = async (id) => {
-    try {
-      await axios.put(`http://localhost:5000/api/books/${id}`, newBook);
-      fetchBooks(); 
-    } catch (error) {
-      console.error('Error updating book:', error);
-    }
+  const handleEditBook = (book) => {
+    setNewBook({ id: book.id, title: book.title, author: book.author, price: book.price, description: book.description });
   };
 
   const handleLogout = async () => {
     try {
       await axios.post('http://localhost:5000/api/auth/logout');
-      navigate('/'); 
+      navigate('/');
     } catch (error) {
       console.error('Error logging out:', error);
     }
@@ -78,7 +79,7 @@ const AdminPage = () => {
         <h1>Admin Dashboard</h1>
         <button className="logout-button" onClick={handleLogout}>Logout</button>
       </div>
-      <form onSubmit={handleAddBook}>
+      <form onSubmit={handleAddOrUpdateBook}>
         <input
           type="text"
           placeholder="Title"
@@ -102,7 +103,7 @@ const AdminPage = () => {
           value={newBook.description}
           onChange={(e) => setNewBook({ ...newBook, description: e.target.value })}
         ></textarea>
-        <button type="submit">Add Book</button>
+        <button type="submit">{newBook.id ? 'Update Book' : 'Add Book'}</button>
       </form>
       <div className="sort-controls">
         <label>Sort by: </label>
@@ -118,7 +119,7 @@ const AdminPage = () => {
             <p>{book.title} by {book.author}</p>
             <p>Price: ${book.price}</p>
             <p>{book.description}</p>
-            <button onClick={() => handleUpdateBook(book.id)}>Update</button>
+            <button onClick={() => handleEditBook(book)}>Edit</button>
             <button onClick={() => handleDeleteBook(book.id)}>Delete</button>
           </li>
         ))}
