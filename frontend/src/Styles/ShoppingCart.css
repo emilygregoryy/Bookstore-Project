@@ -1,6 +1,6 @@
 body {
-  background-color: #0f0721; 
-  color: #ffd700; 
+  background-color: #264653; 
+  color: #fff; 
   font-family: Arial, sans-serif;
 }
 
@@ -8,16 +8,16 @@ body {
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
-  background-color: #1a1a1a; 
+  background-color: #2a9d8f; 
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(255, 0, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .cart h2 {
   margin-bottom: 20px;
   font-size: 24px;
   text-align: center;
-  color: #ffd700; 
+  color: #fff; 
 }
 
 .cart ul {
@@ -31,35 +31,34 @@ body {
   align-items: center;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #333; 
+  background-color: #264653; 
   border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(255, 0, 0, 0.3); 
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
 }
 
 .cart li h3 {
   margin: 0;
   font-size: 18px;
-  color: #ffd700; 
+  color: #fff; 
 }
 
 .cart li p {
   margin: 0;
-  color: #ffd700; 
+  color: #fff; 
 }
-
 
 .cart button {
   padding: 6px 12px;
   border: none;
   border-radius: 4px;
-  background-color: #ff4d4d; 
-  color: #ffd700; 
+  background-color: #f4a261; 
+  color: #fff; 
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .cart button:hover {
-  background-color: #e60000; 
+  background-color: #e76f51; 
 }
 
 .cart .total {
@@ -67,7 +66,7 @@ body {
   font-weight: bold;
   margin-top: 20px;
   text-align: right;
-  color: #ffd700; 
+  color: #fff; 
 }
 
 .cart form {
@@ -83,30 +82,30 @@ body {
 .cart form label {
   margin-bottom: 5px;
   font-weight: bold;
-  color: #ffd700; 
+  color: #fff; 
 }
 
 .cart form input {
   padding: 8px;
-  border: 1px solid #ffd700; 
+  border: 1px solid #ccc; 
   border-radius: 4px;
   width: 100%;
-  background-color: #1a1a1a; 
-  color: #ffd700; 
+  background-color: #2a9d8f; 
+  color: #fff; 
 }
 
 .cart form button {
   padding: 10px 15px;
   border: none;
   border-radius: 4px;
-  background-color: #b22222; 
-  color: #ffd700; 
+  background-color: #f4a261; 
+  color: #fff; 
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .cart form button:hover {
-  background-color: #800000; 
+  background-color: #e76f51; 
 }
 
 .cart .order-number {
@@ -114,5 +113,5 @@ body {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-  color: #ffd700;
+  color: #fff;
 }

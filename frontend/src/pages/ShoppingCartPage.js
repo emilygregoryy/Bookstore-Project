@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { CartContext } from '../context/CartContext';
-import '../Styles/ShoppingCart.css'; 
+import '../Styles/ShoppingCart.css';
 
 const ShoppingCartPage = () => {
   const { cart, removeFromCart, clearCart } = useContext(CartContext);
@@ -21,7 +21,7 @@ const ShoppingCartPage = () => {
     setOrderNumber(newOrderNumber);
     setTimeout(() => {
       clearCart();
-    }, 100); 
+    }, 100);
   };
 
   const handleChange = (e) => {

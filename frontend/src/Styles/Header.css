@@ -1,16 +1,17 @@
 .header {
-  background-color: #b22222;
+  background-color: #f4a261;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #ffd700; 
-  box-shadow: 0 2px 4px rgba(255, 0, 0, 0.3); 
+  color: #fff; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .header .logo {
   font-size: 1.5rem;
   font-weight: bold;
+  color: #fff;
 }
 
 .header nav {
@@ -19,7 +20,7 @@
 }
 
 .header nav a {
-  color: #ffd700; 
+  color: #fff; 
   text-decoration: none;
   padding: 8px 15px;
   border-radius: 5px;
@@ -27,5 +28,5 @@
 }
 
 .header nav a:hover {
-  background-color: #800000; 
+  background-color: #e76f51; 
 }

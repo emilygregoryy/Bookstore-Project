@@ -2,15 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   padding: 20px;
-  background-color: #0f0721;
-  color: #ffd700;
+  background-color: #264653;
+  color: #fff;
 }
 
 .login-page h1 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #ffd700;
+  color: #fff;
 }
 
 .login-page form {
@@ -19,33 +21,33 @@
   gap: 15px;
   width: 100%;
   max-width: 400px;
-  background-color: #1a1a1a;
+  background-color: #2a9d8f;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(255, 0, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .login-page label {
   display: flex;
   flex-direction: column;
   font-size: 1rem;
-  color: #ffd700;
+  color: #fff;
 }
 
 .login-page input {
   padding: 10px;
   font-size: 1rem;
-  border: 1px solid #ffd700;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #1a1a1a;
-  color: #ffd700;
+  background-color: #2a9d8f;
+  color: #fff;
 }
 
 .login-page button {
   padding: 10px 20px;
   font-size: 1rem;
-  background-color: #b22222; 
-  color: #ffd700;
+  background-color: #f4a261; 
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -53,5 +55,5 @@
 }
 
 .login-page button:hover {
-  background-color: #800000;
+  background-color: #e76f51;
 }

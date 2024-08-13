@@ -1,7 +1,6 @@
-// src/pages/RegisterPage.js
+import '../Styles/RegisterPage.css';
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../Styles/RegisterPage.css';
 
 const RegisterPage = () => {
   const [username, setUsername] = useState('');
@@ -12,28 +11,23 @@ const RegisterPage = () => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:5000/api/auth/register', { username, password, email });
-      console.log(response.data);
+      alert('Successfully registered, please log in');
     } catch (error) {
       console.error('Error registering:', error);
+      alert('Error registering. Please try again.');
     }
   };
 
   return (
     <div className="register-page">
-      <h1>Bookstore Staff: Register Here to Sign In</h1>
+      <h1>Register</h1>
       <form onSubmit={handleRegister}>
-        <label>
-          Username:
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-        </label>
-        <label>
-          Password:
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        </label>
-        <label>
-          Email:
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        </label>
+        <label>Username:</label>
+        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+        <label>Password:</label>
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <label>Email:</label>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         <button type="submit">Register</button>
       </form>
     </div>
