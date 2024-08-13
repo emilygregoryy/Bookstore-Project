@@ -1,4 +1,3 @@
-// db.js
 const mysql = require('mysql');
 
 const pool = mysql.createPool({
@@ -28,4 +27,18 @@ function query(sql, params, callback) {
   });
 }
 
-module.exports = { query };
+function findUserByUsername(username, callback) {
+  const sql = 'SELECT * FROM users WHERE username = ?';
+  query(sql, [username], callback);
+}
+
+function addUser(username, passwordHash, email, callback) {
+  const sql = 'INSERT INTO users (username, password, email) VALUES (?, ?, ?)';
+  query(sql, [username, passwordHash, email], callback);
+}
+
+module.exports = {
+  query,
+  findUserByUsername,
+  addUser
+};

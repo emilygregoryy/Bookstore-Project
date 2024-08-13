@@ -13,6 +13,15 @@
 
 ## USE bookstore;
 
+## Create users table; 
+## CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE
+## );
+
+
 ## Create table in database using SQL statement;
 ## CREATE TABLE books (
     id INT AUTO_INCREMENT PRIMARY KEY,

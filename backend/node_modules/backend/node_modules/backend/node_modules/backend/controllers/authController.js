@@ -1,6 +1,5 @@
-// controllers/authController.js
 const passport = require('passport');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const db = require('../db');
 
 exports.register = async (req, res) => {
